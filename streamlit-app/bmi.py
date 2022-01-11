@@ -10,7 +10,7 @@ def main():
         Whether you're a man, woman or teen, you can learn how to calculate your BMI using the BMI calculator")
     #Asking for height and weight
     height=st.number_input("Enter your height(m)",min_value=0.01)
-    weight=st.number_input("Enter your weight(kg)",min_value=0.1)
+    weight=st.number_input("Enter your weight(kg)",min_value=0.01)
     calculate=st.button("Calculate")
     if calculate:
         bmi=float(weight)/float(height)**2

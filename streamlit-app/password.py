@@ -33,7 +33,7 @@ def main():
         password=""
         for word in password_list:
             password+=word
-        message=f"Your secure password is {password}.\n Make sure to keep it save somewhere like a notepad"
+        message=f"Your secure password is {password}\n Make sure to keep it save somewhere like a notepad"
         st.success(message)
     else:
         st.info("What are you waiting for? Click the button to get your secure password!!!")

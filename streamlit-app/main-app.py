@@ -10,6 +10,7 @@ import love_calculator
 import bill_roulette
 import rock_paper_scissors
 import password
+from PIL import Image
 
 st.set_page_config(page_title='100 days of code challenge', layout='centered') #setting page name
 

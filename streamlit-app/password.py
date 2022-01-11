@@ -36,5 +36,5 @@ def main():
         message=f"Your secure password is {password}.\n Make sure to keep it save somewhere like a notepad"
         st.success(message)
     else:
-        st.info("What are you waiting for? Click the button to get your secure passowrd!!!")
+        st.info("What are you waiting for? Click the button to get your secure password!!!")
 

@@ -18,4 +18,3 @@ def main():
         else:
             Share=f"Each person should pay: ${final_amount}"
             st.info(Share)
-

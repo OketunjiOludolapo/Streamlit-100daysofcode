@@ -1,3 +1,5 @@
+#Importing all neccessary libraries and modules(the other files)
+# Apart from streamlit, all the other imported modules are files with python scripts on the same folder
 import streamlit as st
 import bmi
 import leap
@@ -7,8 +9,9 @@ import Tip_calculator
 import love_calculator
 import bill_roulette
 import rock_paper_scissors
-from PIL import Image
-st.set_page_config(page_title='100 days of code challenge', layout='centered')
+import password
+
+st.set_page_config(page_title='100 days of code challenge', layout='centered') #setting page name
 
 hide_menu_style = """
         <style>
@@ -16,8 +19,7 @@ hide_menu_style = """
         header {visibility: hidden;}
         </style>
         """
-st.markdown(hide_menu_style, unsafe_allow_html=True)
-
+st.markdown(hide_menu_style, unsafe_allow_html=True) # Hiding the default nav bar and header
 
 PAGES = { 
     
@@ -27,12 +29,13 @@ PAGES = {
     "Tip and Bill Sharing": Tip_calculator,
     "Love Calculator": love_calculator,
    "Pay the bill":bill_roulette,
-   "Rock paper scissors":rock_paper_scissors
+   "Rock paper scissors":rock_paper_scissors,
+   "Password Generator":password
 }
 
-choice=st.sidebar.radio("Choose Level",["Welcome","Beginner","Intermediate","Advanced"])
+choice=st.sidebar.radio("Choose Level",["Welcome","Beginner","Intermediate","Advanced"]) # Creating a radio button for the 4 levels
 if choice=="Welcome":
-    welcome.main()
+    welcome.main() #this main is the name of the function in the welcome file. Same goes for others
 elif choice=="Beginner":
     selection = st.sidebar.radio("Projects", list(PAGES.keys()))
     page = PAGES[selection]
@@ -50,6 +53,8 @@ elif choice=="Beginner":
         bill_roulette.main()
     elif selection=="Rock paper scissors":
         rock_paper_scissors.main()
+    elif selection=="Password Generator":
+        password.main()
 elif choice=="Intermediate":
     st.markdown("<h3> The challenge is still ongoing and still in the beginners level.</h3>",unsafe_allow_html=True)
     st.image("images/Coming soon.jpg",use_column_width=True) 
@@ -57,6 +62,7 @@ else:
     st.markdown("<h3> The challenge is still ongoing and still in the beginners level.</h3>",unsafe_allow_html=True)
     st.image("images/Coming soon.jpg",use_column_width=True) 
 
+# Generating a customized footer
 footer="""<style>
 a:link , a:visited{
 color: blue;
